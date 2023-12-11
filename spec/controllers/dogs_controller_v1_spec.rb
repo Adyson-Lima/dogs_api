@@ -12,4 +12,12 @@ RSpec.describe Api::V1::DogsController, type: :controller do
     end
   end
 
+  describe 'GET /api/v1/dogs/id' do
+    it 'Consegue listar um dog especifico e retornar status 200?' do
+      get :show, params: {id: @dog.id}
+      expect(response.body).to include_json(breed: 'dalmata')
+      expect(response).to have_http_status(200)
+    end
+  end
+
 end
