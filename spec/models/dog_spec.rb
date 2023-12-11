@@ -11,6 +11,11 @@ RSpec.describe Dog, type: :model do
       expect(@dog.breed).to eq('chitsu')
     end
 
+    it 'size consegue ser preenchido?' do
+      @dog.size = ''
+      expect(@dog.size).to eq('pequeno')
+    end
+
   end
 
 end
