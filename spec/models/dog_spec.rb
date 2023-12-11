@@ -18,4 +18,14 @@ RSpec.describe Dog, type: :model do
 
   end
 
+  describe 'Testes de validação do model Dog' do
+
+    it 'dog valido com campos obrigatorios preenchidos?' do
+      @dog.breed = ''
+      @dog.size = ''
+      expect(@dog).to be_valid
+    end
+    
+  end
+
 end
