@@ -1,6 +1,6 @@
 class Api::V1::DogsController < ApplicationController
 
-  before_action :set_dog, only: %i[show update] #show update destroy
+  before_action :set_dog, only: %i[show update destroy] #show update destroy
 
   def index
     @dogs = Dog.all 
@@ -18,6 +18,10 @@ class Api::V1::DogsController < ApplicationController
     else
       render json: @dog.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @dog.destroy!
   end
 
   def update
