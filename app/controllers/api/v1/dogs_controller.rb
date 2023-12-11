@@ -11,6 +11,15 @@ class Api::V1::DogsController < ApplicationController
     render json: @dog
   end
 
+  def create
+    @dog = Dog.new(dog_params)
+    if @dog.save
+      render json: @dog, status: :created, location: api_v1_dog_url(@dog)
+    else
+      render json: @dog.errors, status: :unprocessable_entity
+    end
+  end
+
 private
 
 def set_dog
