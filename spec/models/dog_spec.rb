@@ -25,6 +25,11 @@ RSpec.describe Dog, type: :model do
       @dog.size = 'grande'
       expect(@dog).to be_valid
     end
+
+    it 'dog invalido com campos obrigatorios não preenchidos?' do
+      dog = Dog.new
+      expect(dog).to be_valid
+    end
     
   end
 
