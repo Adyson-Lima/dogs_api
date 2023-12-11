@@ -28,7 +28,7 @@ RSpec.describe Dog, type: :model do
 
     it 'dog invalido com campos obrigatorios não preenchidos?' do
       dog = Dog.new
-      expect(dog).to be_valid
+      expect(dog).to be_invalid
     end
     
   end
