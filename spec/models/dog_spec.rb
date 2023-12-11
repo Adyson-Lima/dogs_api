@@ -7,7 +7,7 @@ RSpec.describe Dog, type: :model do
   describe 'Testes de prenchimento dos campos do model Dog' do
 
     it 'breed consegue ser preenchido?' do
-      @dog.breed = ''
+      @dog.breed = 'chitsu'
       expect(@dog.breed).to eq('chitsu')
     end
 
